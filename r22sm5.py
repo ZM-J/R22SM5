@@ -15,7 +15,8 @@ class R2Handler( xml.sax.ContentHandler ):
         if tag == "TITLE":
             self.title = attributes["Name"]
         elif tag == "BPM":
-            self.bpm.append(attributes["Frame"] + '=' + attributes["BPM"])
+            # 一个Coord=48分音
+            self.bpm.append(str(int(attributes["Frame"]) / 48.0) + '=' + attributes["BPM"])
         elif tag == "BGM":
             self.bgm = attributes["Name"]
         elif tag == "DELAY":
@@ -152,8 +153,8 @@ def output_content(f, handler):
 
 if ( __name__ == "__main__"):
    
-    fromdir = "n_song4045_play.xml"
-    todir = "ggptt.sm"
+    fromdir = "n_song4423.xml"
+    todir = "xiaye.sm"
 
     # 创建一个 XMLReader
     parser = xml.sax.make_parser()

@@ -1,6 +1,10 @@
 # R2 2 SM5
 This is a simple Python script which can transform a R2Beat-style note (XML file) to a corresponding [Pump-It-Up](www.piugame.com)-style [Stepmania 5](www.stepmania.com) (SM file) note.
 
+## Special attention
+
+Official R2Beat notes use `encoding="euc-kr"` in XML head as default, which cannot be accepted by this script. Change it to `encoding="utf-8"` manually beforehand.
+
 ## Limitations
 
 1. This simple script cannot deal with those R2Beat steps containing key sound effect. Key sound effect will be ignored.
